@@ -1,0 +1,6 @@
+{
+  "name": "EDIFICE Spoken English — Bangla to English Vocational Book & App",
+  "description": "Interactive Bangla-to-English vocational communication book and learning app for EDIFICE Consultants (Dhaka, Bangladesh), authored by Alve Ahmed Shatu. Features 30 Golden Rules, 30 Daily Structures, 300 Power Words with V1-V2-V3 verb forms, story-based learning, pronunciation guide, 30-day progress tracker, and printable full book PDF.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

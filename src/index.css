@@ -1,0 +1,382 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-display: 'Plus Jakarta Sans', 'Hind Siliguri', system-ui, -apple-system, sans-serif;
+    --font-sans: 'Plus Jakarta Sans', 'Hind Siliguri', system-ui, -apple-system, sans-serif;
+    --font-bangla: 'Hind Siliguri', 'Plus Jakarta Sans', sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+    color-scheme: light;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #edf2f7;
+    color: #0b2239;
+    transition: background-color 180ms ease, color 180ms ease;
+  }
+
+  html.dark body {
+    background-color: #071526;
+    color: #eef5fb;
+  }
+
+  h1, h2, .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+/* Layered architectural canvas matching the Navy + Teal + Gold textbook brand (never sterile flat white) */
+.app-canvas-bg {
+  background-color: #edf2f7;
+  background-image:
+    radial-gradient(900px 420px at 12% -6%, rgba(13, 122, 120, 0.11), transparent 65%),
+    radial-gradient(760px 380px at 90% 0%, rgba(244, 180, 26, 0.10), transparent 60%),
+    linear-gradient(180deg, #e8eff6 0%, #eff4f9 45%, #edf2f7 100%);
+  background-attachment: fixed;
+}
+
+html.dark .app-canvas-bg {
+  background-color: #071526;
+  background-image:
+    radial-gradient(960px 460px at 15% -8%, rgba(14, 148, 146, 0.16), transparent 65%),
+    radial-gradient(760px 400px at 88% 2%, rgba(244, 180, 26, 0.08), transparent 60%),
+    linear-gradient(180deg, #061322 0%, #08182b 55%, #071526 100%);
+  background-attachment: fixed;
+}
+
+.studio-card {
+  background-color: #ffffff;
+  border: 1px solid #d7e2ec;
+  box-shadow: 0 1px 2px rgba(11, 40, 71, 0.04), 0 10px 26px -18px rgba(11, 40, 71, 0.14);
+}
+
+html.dark .studio-card {
+  background-color: #0e223a;
+  border-color: #1d3856;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.28), 0 12px 28px -16px rgba(0, 0, 0, 0.48);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-bangla {
+  font-family: var(--font-bangla);
+}
+
+.font-mono-tabular {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Smooth focus visibility */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid #0d7a78;
+  outline-offset: 2px;
+}
+
+html.dark button:focus-visible,
+html.dark a:focus-visible,
+html.dark input:focus-visible,
+html.dark select:focus-visible {
+  outline-color: #2dd4bf;
+}
+
+/* Unified Navy + Teal + Gold brand remap for Light Mode & Dark Mode across all views */
+.text-\[\#0B6E4F\] {
+  color: #0d7a78;
+}
+.bg-\[\#0B6E4F\] {
+  background-color: #0d7a78;
+}
+.hover\:bg-\[\#095A40\]:hover {
+  background-color: #0a6361;
+}
+.bg-\[\#0F2421\] {
+  background-color: #0b2847;
+}
+.text-\[\#0F2421\] {
+  color: #0b2239;
+}
+.border-\[\#DDE5E1\] {
+  border-color: #d7e2ec;
+}
+.border-\[\#D4DDD8\],
+.border-\[\#CBD6D1\] {
+  border-color: #c8d6e3;
+}
+.bg-\[\#EDF2EF\],
+.bg-\[\#EBF0ED\] {
+  background-color: #e4ecf4;
+}
+.bg-\[\#F4F7F5\],
+.bg-\[\#F2F6F4\],
+.bg-\[\#F5F8F6\],
+.bg-\[\#F6F9F7\],
+.bg-\[\#FAFBF9\] {
+  background-color: #f4f8fc;
+}
+.bg-\[\#E9F5F0\],
+.bg-\[\#E5F4EE\],
+.bg-\[\#E9F4EF\],
+.bg-\[\#F3FAF7\],
+.bg-\[\#F7FCF9\],
+.bg-\[\#F2F7F4\] {
+  background-color: #e6f5f4;
+}
+
+/* Semantic Dark Theme mapping (Deep Midnight Navy + Ocean Teal + Warm Gold) */
+html.dark .bg-\[\#F8F9F7\],
+html.dark .bg-\[\#EDF2F7\] {
+  background-color: #071526 !important;
+}
+html.dark .bg-white {
+  background-color: #0e223a !important;
+}
+html.dark .bg-\[\#FAFBF9\],
+html.dark .bg-\[\#F8FAF9\],
+html.dark .bg-\[\#F9FBFA\],
+html.dark .bg-\[\#F6F9F7\],
+html.dark .bg-\[\#F5F8F6\],
+html.dark .bg-\[\#F4F7F5\],
+html.dark .bg-\[\#F3F7F5\],
+html.dark .bg-\[\#F2F6F4\],
+html.dark .bg-\[\#F2F7F4\],
+html.dark .bg-\[\#F4F8FC\] {
+  background-color: #132c49 !important;
+}
+html.dark .bg-\[\#EDF2EF\],
+html.dark .bg-\[\#EBF0ED\],
+html.dark .bg-\[\#E3EAE6\],
+html.dark .bg-\[\#EFF4F1\],
+html.dark .bg-\[\#E4ECF4\] {
+  background-color: #163252 !important;
+}
+html.dark .bg-\[\#E9F5F0\],
+html.dark .bg-\[\#E5F4EE\],
+html.dark .bg-\[\#E9F4EF\],
+html.dark .bg-\[\#F3FAF7\],
+html.dark .bg-\[\#F7FCF9\],
+html.dark .bg-\[\#E6F5F4\] {
+  background-color: #0f3a43 !important;
+}
+html.dark .bg-\[\#FDF8EE\] {
+  background-color: #282112 !important;
+}
+html.dark .bg-\[\#FDF1F0\] {
+  background-color: #35181d !important;
+}
+html.dark .hover\:bg-white:hover,
+html.dark .hover\:bg-\[\#F9FBFA\]:hover,
+html.dark .hover\:bg-\[\#FAFBF9\]:hover,
+html.dark .hover\:bg-\[\#F6F9F7\]:hover,
+html.dark .hover\:bg-\[\#F2F6F4\]:hover,
+html.dark .hover\:bg-\[\#EFF4F1\]:hover,
+html.dark .hover\:bg-\[\#EDF2EF\]:hover,
+html.dark .hover\:bg-\[\#E7EEEA\]:hover,
+html.dark .hover\:bg-\[\#F3F6F4\]:hover,
+html.dark .hover\:bg-\[\#F4F8FC\]:hover {
+  background-color: #18375a !important;
+}
+html.dark .hover\:bg-\[\#E9F5F0\]:hover,
+html.dark .hover\:bg-\[\#D5ECE2\]:hover {
+  background-color: #144954 !important;
+}
+html.dark .hover\:bg-white\/60:hover {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Dark theme borders & dividers */
+html.dark .border-\[\#DDE5E1\],
+html.dark .border-\[\#E8EEEC\],
+html.dark .border-\[\#EDF2EF\],
+html.dark .border-\[\#E3EAE6\],
+html.dark .border-\[\#E6ECE9\],
+html.dark .border-\[\#DCE5E0\],
+html.dark .border-\[\#D4DDD8\],
+html.dark .border-\[\#CBD6D1\],
+html.dark .border-\[\#CFE3DA\],
+html.dark .border-\[\#D7E2EC\],
+html.dark .border-\[\#C8D6E3\] {
+  border-color: #1f3c5c !important;
+}
+html.dark .border-\[\#EBDAB8\] {
+  border-color: #5c481c !important;
+}
+html.dark .divide-\[\#EDF2EF\] > :not(:last-child),
+html.dark .divide-\[\#EEF2F0\] > :not(:last-child),
+html.dark .divide-\[\#E9EFEC\] > :not(:last-child),
+html.dark .divide-\[\#E4ECF4\] > :not(:last-child) {
+  border-color: #1b3552 !important;
+}
+
+/* Dark theme text hierarchy */
+html.dark .text-\[\#0B2239\],
+html.dark .text-\[\#0F2421\],
+html.dark .text-\[\#223834\],
+html.dark .text-\[\#233834\],
+html.dark .text-\[\#243935\],
+html.dark .text-\[\#283E3A\],
+html.dark .text-\[\#2B403C\],
+html.dark .text-\[\#2D423E\],
+html.dark .text-\[\#2E4440\] {
+  color: #eef5fb !important;
+}
+html.dark .text-\[\#334845\],
+html.dark .text-\[\#364B47\],
+html.dark .text-\[\#3B514D\],
+html.dark .text-\[\#435854\],
+html.dark .text-\[\#4A615D\],
+html.dark .text-\[\#546B67\],
+html.dark .text-\[\#556B67\],
+html.dark .text-\[\#5A706B\],
+html.dark .text-\[\#5B706C\],
+html.dark .text-\[\#607571\],
+html.dark .text-\[\#637874\],
+html.dark .text-\[\#647975\],
+html.dark .text-\[\#6B807C\],
+html.dark .text-\[\#6E827E\] {
+  color: #9fb8d0 !important;
+}
+html.dark .text-\[\#0B6E4F\],
+html.dark .text-\[\#0D7A78\] {
+  color: #2dd4bf !important;
+}
+html.dark .text-\[\#7A5114\],
+html.dark .text-\[\#5B421A\],
+html.dark .text-\[\#4A3514\] {
+  color: #f6c959 !important;
+}
+html.dark .text-\[\#9E2E22\] {
+  color: #fb8d83 !important;
+}
+html.dark .hover\:text-\[\#0F2421\]:hover,
+html.dark .hover\:text-\[\#0B2239\]:hover {
+  color: #ffffff !important;
+}
+html.dark .placeholder\:text-\[\#758A86\]::placeholder {
+  color: #7c99b5 !important;
+}
+
+/* Preserve crisp dark ink on explicitly light surfaces inside dark mode (QR box & SVG diagrams) */
+html.dark .qr-white-frame,
+html.dark .svg-plate {
+  background-color: #ffffff !important;
+  border-color: #27486a !important;
+}
+
+/* High-contrast Navy table headers for clean textbook print & screen tables */
+.book-navy-thead,
+.book-navy-thead th {
+  background-color: #0b2847 !important;
+  color: #ffffff !important;
+  border-color: #0b2847 !important;
+}
+
+/* Dark theme secondary buttons that use dark navy fill */
+html.dark .bg-\[\#0F2421\],
+html.dark .bg-\[\#0B2847\] {
+  background-color: #1b3f66 !important;
+  color: #f8fafc !important;
+}
+html.dark .hover\:bg-\[\#1A3833\]:hover,
+html.dark .hover\:bg-\[\#1B3A35\]:hover {
+  background-color: #245080 !important;
+}
+
+/* Crisp textbook PDF print styling (always clean black ink on white paper) */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 14mm;
+  }
+
+  html.dark body,
+  body,
+  .app-canvas-bg,
+  html.dark .app-canvas-bg {
+    background: #ffffff !important;
+    background-image: none !important;
+    color: #0b2239 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  html.dark #edifice-complete-book-printable,
+  html.dark #edifice-complete-book-printable .bg-white,
+  html.dark #edifice-complete-book-printable .studio-card,
+  html.dark #edifice-complete-book-printable .bg-\[\#FAFBF9\] {
+    background-color: #ffffff !important;
+    box-shadow: none !important;
+  }
+
+  html.dark #edifice-complete-book-printable .bg-\[\#F5F8F6\],
+  html.dark #edifice-complete-book-printable .bg-\[\#F3F7F5\],
+  html.dark #edifice-complete-book-printable .bg-\[\#F2F6F4\],
+  html.dark #edifice-complete-book-printable .bg-\[\#F4F8FC\] {
+    background-color: #f4f8fc !important;
+  }
+
+  html.dark #edifice-complete-book-printable .bg-\[\#FDF8EE\] {
+    background-color: #fdf8ee !important;
+  }
+
+  html.dark #edifice-complete-book-printable .text-\[\#0B2239\],
+  html.dark #edifice-complete-book-printable .text-\[\#0F2421\],
+  html.dark #edifice-complete-book-printable .text-\[\#2B403C\],
+  html.dark #edifice-complete-book-printable .text-\[\#2D423E\],
+  html.dark #edifice-complete-book-printable .text-\[\#334845\],
+  html.dark #edifice-complete-book-printable .text-\[\#435854\],
+  html.dark #edifice-complete-book-printable .text-\[\#4A615D\],
+  html.dark #edifice-complete-book-printable .text-\[\#546B67\],
+  html.dark #edifice-complete-book-printable .text-\[\#5B706C\] {
+    color: #0b2239 !important;
+  }
+
+  html.dark #edifice-complete-book-printable .text-\[\#0B6E4F\],
+  html.dark #edifice-complete-book-printable .text-\[\#0D7A78\] {
+    color: #0d7a78 !important;
+  }
+
+  html.dark #edifice-complete-book-printable .text-\[\#7A5114\],
+  html.dark #edifice-complete-book-printable .text-\[\#5B421A\] {
+    color: #5b421a !important;
+  }
+
+  html.dark #edifice-complete-book-printable .book-navy-thead,
+  html.dark #edifice-complete-book-printable .book-navy-thead th {
+    background-color: #0b2847 !important;
+    color: #ffffff !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .book-page-break {
+    page-break-before: always;
+    break-before: page;
+  }
+
+  .book-avoid-break {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}
